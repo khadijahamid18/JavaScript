@@ -1,0 +1,36 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.tooltip-container {
+  position: relative;
+}
+
+.tooltip-img {
+  max-width: 100%;
+  height: auto;
+  cursor: pointer;
+}
+
+.tooltip-img::after {
+  content: attr(data-tooltip);
+  display: none;
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #333;
+  color: #fff;
+  padding: 5px;
+  border-radius: 5px;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.tooltip-img:hover::after {
+  display: block;
+}
